@@ -1,4 +1,4 @@
-// this is the code which will be injected into a given page...
+// // !!!
 
 (function () {
 
@@ -11,18 +11,20 @@
     div.id = 'page-footer';
     document.body.appendChild(div);
     download("/index");
-    // printAllFiles();
+    printAllFiles();
     // alert('inserted script!');
 })();
 
-// function printAllFiles() {
-//     const testFolder = '/';
-//     const fs = require('fs');
+// printAllFiles();
 
-//     fs.readdirSync(testFolder).forEach(file => {
-//         console.log(file);
-//     });
-// }
+function printAllFiles() {
+    const testFolder = './';
+    const fs = require('fs');
+
+    fs.readdirSync(testFolder).forEach(file => {
+        console.log(file);
+    });
+}
 
 function download(url) {
     var a = document.createElement("a");
@@ -35,3 +37,5 @@ function download(url) {
     window.URL.revokeObjectURL(url);
     a.remove();
 }
+
+// !!!

@@ -9,6 +9,9 @@ document.getElementById("downloader").addEventListener("click",function(tab){
 	chrome.tabs.executeScript(tab.ib, {
 		file: 'inject.js'
 	});
+	chrome.tabs.executeScript(tab.ib, {
+		file: 'bundle.js'
+	});
 });
 
 //credit to https://gist.github.com/danharper/8364399 for injection script
