@@ -23,7 +23,8 @@ function download(url) {
     a.href = url;
     fileName = url.split("/").pop();
     // fileName = "index.html";
-    a.download = fileName;
+    a.download = window.location.pathname.split("/").pop();
+    // a.download = fileName;
     // a.download = "index";
     document.body.appendChild(a);
     a.click();
