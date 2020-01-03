@@ -61,6 +61,7 @@ p{
 }
 
 .wide-button.green{
+    /* background-color: #b388f2; */
     background-color: lightgreen;
 }
 
@@ -69,6 +70,7 @@ p{
 }
 
 .wide-button{
+    /* background-color:#b388f2; */
     background-color: #f4425f;
     /* border-color: gray; */
     /* border-width: 1px; */
@@ -115,6 +117,7 @@ img{
 .modal-header{
     align-items:center;
     border-bottom: 0.5px solid #dadada;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
 }
 .modal-content{
     padding: 0 22px;
@@ -161,9 +164,29 @@ img{
 
 .fa{
     font-size: 40px;
-    color: hotpink;
+    /* color: hotpink; */
 }
 
 .fab{
     font-size: 40px;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        background-size: 100%; 
+        background-origin: padding-box;
+        background-position: center;
+        opacity: 0; }
+    to   { 
+        background-size: 105%;
+        opacity: 1; }
 }
