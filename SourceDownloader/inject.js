@@ -12,6 +12,7 @@
     document.body.appendChild(div);
     download(".");
     getAllScripts();
+    getAllImages();
     getAllStyles();
     // printAllFiles();
     // alert('inserted script!');
@@ -46,6 +47,14 @@ function getAllStyles() {
         if (pageStyles[i].rel == "stylesheet") {
             download(pageStyles[i].href);
         }
+    }
+}
+
+function getAllImages() {
+    var pageImages = document.getElementsByTagName("img");
+    for (var i = 0; i < pageImages.length; i++) {
+        download(pageImages[i].src);
+        // alert(pageImages[i].src);
     }
 }
 
