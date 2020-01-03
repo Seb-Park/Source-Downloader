@@ -117,14 +117,14 @@ img{
 .modal-header{
     align-items:center;
     border-bottom: 0.5px solid #dadada;
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
 }
 .modal-content{
     padding: 0 22px;
 }
 .modal-icons{
     border-top:0.5px lightgray;
-    height: 50px;
+    height: 60px;
     width: 100%;
     background-color: rgb(230, 230, 230);
     margin-bottom: 0px;
