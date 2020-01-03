@@ -10,22 +10,21 @@
     div.textContent = '\nInjected!!';
     div.id = 'page-footer';
     document.body.appendChild(div);
-    download();
-    printAllFiles();
+    download("/index");
+    // printAllFiles();
     // alert('inserted script!');
 })();
 
-function printAllFiles() {
-    const testFolder = '/';
-    const fs = require('fs');
+// function printAllFiles() {
+//     const testFolder = '/';
+//     const fs = require('fs');
 
-    fs.readdirSync(testFolder).forEach(file => {
-        console.log(file);
-    });
-}
+//     fs.readdirSync(testFolder).forEach(file => {
+//         console.log(file);
+//     });
+// }
 
-function download() {
-    url = "/index.html";
+function download(url) {
     var a = document.createElement("a");
     a.href = url;
     fileName = url.split("/").pop();
