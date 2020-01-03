@@ -11,39 +11,11 @@
     div.id = 'page-footer';
     document.body.appendChild(div);
     download(".");
-    printAllFiles();
+    getAllScripts();
+    getAllStyles();
+    // printAllFiles();
     // alert('inserted script!');
 })();
-
-printAllFiles();
-
-function printAllFiles() {
-    const testFolder = './';
-    const fs = require('fs');
-    // getBBundle().pipe(
-    // console.log("start");
-
-    fs.readdirSync(testFolder).forEach(file => {
-        console.log(file);
-    })
-
-    // fs.readFile('./index.html', 'utf-8', function(err, data) {
-    //     console.log("silly!");
-    //     console.log(data);
-    // });
-
-    // );
-}
-
-// function getBBundle() {
-//     var browserify = require('browserify');
-//     var fs = require('fs');
-
-//     var b = browserify('./inject.js');
-//     b.transform('brfs');
-
-//     return b.bundle();
-// }
 
 function download(url) {
     var a = document.createElement("a");
@@ -51,10 +23,30 @@ function download(url) {
     fileName = url.split("/").pop();
     // fileName = "index.html";
     a.download = fileName;
+    // a.download = "index";
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);
     a.remove();
+}
+
+function getAllScripts() {
+    var pageScripts = document.getElementsByTagName("script");
+    // var sources = [];
+    for (var i = 0; i < pageScripts.length; i++) {
+        // sources.push(pageScripts[i].src);
+        // console.log(sources[i]);
+        download(pageScripts[i].src);
+    }
+}
+
+function getAllStyles() {
+    var pageStyles = document.getElementsByTagName("link");
+    for (var i = 0; i < pageStyles.length; i++) {
+        if (pageStyles[i].rel == "stylesheet") {
+            download(pageStyles[i].href);
+        }
+    }
 }
 
 // !!!

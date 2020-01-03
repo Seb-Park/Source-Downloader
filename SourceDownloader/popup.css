@@ -69,6 +69,11 @@ p{
     transform: scale(1.03);
 }
 
+.wide-button:active{
+    transform: scale(0.97);
+    box-shadow: none;
+}
+
 .wide-button{
     /* background-color:#b388f2; */
     background-color: #f4425f;
