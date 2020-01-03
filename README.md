@@ -12,7 +12,7 @@ Then, in the top bar, click "load unpacked" and navigate to your cloned reposito
 ## Usage
 
 To use this extension, simply navigate to any webpage that you want to download. Try [the Google Play Store](https://play.google.com/) as an example. Click the source downloader icon in the top right corner of your browser, and type whatever you would like to rename the file. Click download all to download the appropriate HTML, CSS, and JavaScript for that page. Keep in mind that server side code like PHP and python will not download.
-### I am not responsible for any copyright infringement on the user's behalf. Please use this extension for personal use.
+###### I am not responsible for any copyright infringement on the user's behalf. Please use this extension for personal use.
 
 
 ## Contributing
