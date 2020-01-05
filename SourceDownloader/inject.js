@@ -23,9 +23,14 @@ function download(url) {
     a.href = url;
     fileName = url.split("/").pop();
     // fileName = "index.html";
-    a.download = window.location.pathname.split("/").pop();
-    // a.download = fileName;
+    if (url == "." || url == "./") {
+        a.download = window.location.pathname.split("/").pop();
+    }
+    else {
+        a.download = fileName;
+    }
     // a.download = "index";
+    a.target = "_blank";
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);
@@ -45,17 +50,22 @@ function getAllScripts() {
 function getAllStyles() {
     var pageStyles = document.getElementsByTagName("link");
     for (var i = 0; i < pageStyles.length; i++) {
-        if (pageStyles[i].rel == "stylesheet") {
+        // if (pageStyles[i].rel == "stylesheet" && !pageStyles[i].href.includes("http://") && !pageStyles[i].href.includes("https://")) {
             download(pageStyles[i].href);
-        }
+        // }
     }
 }
 
 function getAllImages() {
     var pageImages = document.getElementsByTagName("img");
     for (var i = 0; i < pageImages.length; i++) {
-        download(pageImages[i].src);
-        // alert(pageImages[i].src);
+        // if (!pageImages[i].src.includes("http://")&&!pageImages[i].src.includes("https://")) {
+            
+            // if(pageImages[i].src.hostname != this.hostname) {
+                download(pageImages[i].src);
+            // }
+            // alert(pageImages[i].src);
+        // }
     }
 }
 
